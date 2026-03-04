@@ -10,6 +10,36 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
+/**
+ * Retry with exponential backoff for rate limits
+ */
+async function retryWithBackoff<T>(
+  fn: () => Promise<T>,
+  maxRetries = 3
+): Promise<T> {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      return await fn();
+    } catch (error: any) {
+      const isRateLimit = 
+        error?.message?.includes('RESOURCE_EXHAUSTED') ||
+        error?.message?.includes('429') ||
+        error?.message?.includes('Quota exceeded');
+      
+      if (!isRateLimit || i === maxRetries - 1) throw error;
+      
+      const delayMatch = error?.message?.match(/retry in ([\d.]+)s/);
+      const delay = delayMatch 
+        ? parseFloat(delayMatch[1]) * 1000 
+        : Math.pow(2, i) * 2000;
+      
+      console.log(`⏳ Rate limit - waiting ${Math.round(delay/1000)}s... (${i+1}/${maxRetries})`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+  throw new Error('Max retries exceeded');
+}
+
 const RefineIdeaPromptInputSchema = z.object({
   ideaPrompt: z.string().describe('The initial 1-2 line business idea prompt from the user.'),
 });
@@ -57,7 +87,7 @@ const refineIdeaPromptFlow = ai.defineFlow(
     outputSchema: RefineIdeaPromptOutputSchema,
   },
   async input => {
-    const {output} = await refineIdeaPromptPrompt(input);
+    const {output} = await retryWithBackoff(() => refineIdeaPromptPrompt(input));
     return output!;
   }
 );

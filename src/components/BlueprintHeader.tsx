@@ -15,9 +15,9 @@ export function BlueprintHeader() {
         </div>
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex items-center gap-4 text-sm font-medium">
-            <a href="#" className="transition-colors hover:text-primary">Documentation</a>
-            <a href="#" className="transition-colors hover:text-primary">Examples</a>
-            <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Pricing</a>
+            <a href="/" className="transition-colors hover:text-primary">Home</a>
+            <a href="/features" className="transition-colors hover:text-primary">Features</a>
+            <a href="/about" className="transition-colors hover:text-primary">About</a>
           </nav>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
             <Sparkles className="h-3 w-3" />
