@@ -13,22 +13,22 @@ export default function AboutPage() {
 
   const values = [
     {
-      icon: <Sparkles className="h-7 w-7 text-cyan-400" />,
+      icon: <Sparkles className="h-7 w-7 text-primary" />,
       title: "Innovation First",
       description: "We leverage the latest AI technology to help entrepreneurs transform ideas into reality with unprecedented speed and accuracy."
     },
     {
-      icon: <Users className="h-7 w-7 text-cyan-400" />,
+      icon: <Users className="h-7 w-7 text-primary" />,
       title: "Founder Focused",
       description: "Built by entrepreneurs for entrepreneurs. We understand the challenges of turning an idea into a successful startup."
     },
     {
-      icon: <Shield className="h-7 w-7 text-cyan-400" />,
+      icon: <Shield className="h-7 w-7 text-primary" />,
       title: "Quality Guaranteed",
       description: "Every blueprint is generated using proven business frameworks and validated market research methodologies."
     },
     {
-      icon: <TrendingUp className="h-7 w-7 text-cyan-400" />,
+      icon: <TrendingUp className="h-7 w-7 text-primary" />,
       title: "Continuous Improvement",
       description: "Our AI models are constantly learning and improving to provide even better insights and recommendations."
     }
@@ -62,19 +62,19 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #1B1B1B 0%, #323232 55%, #1B1B1B 100%)" }}>
       <BlueprintHeader />
       
       <main className="container mx-auto px-4 sm:px-8 py-16">
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Rocket className="h-8 w-8 text-cyan-400" />
-            <span className="text-cyan-400 text-sm font-semibold uppercase tracking-wider">About IdeaForge</span>
+            <Rocket className="h-8 w-8 text-primary" />
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">About IdeaForge</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">
             Turn Ideas Into{" "}
-            <span className="text-cyan-400 drop-shadow-[0_0_24px_rgba(34,211,238,0.4)]">
+            <span className="text-primary drop-shadow-[0_0_24px_rgba(252,110,32,0.5)]">
               Action Plans
             </span>
           </h1>
@@ -88,9 +88,9 @@ export default function AboutPage() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300"
+              className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
             >
-              <div className="flex justify-center mb-3 text-cyan-400">
+              <div className="flex justify-center mb-3 text-primary">
                 {stat.icon}
               </div>
               <div className="text-4xl font-bold text-white mb-2">
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
         {/* Mission Section */}
         <div className="max-w-4xl mx-auto mb-24">
-          <div className="p-12 rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm">
+          <div className="p-12 rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 to-orange-500/10 backdrop-blur-sm">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               Our Mission
             </h2>
@@ -133,16 +133,16 @@ export default function AboutPage() {
             {howItWorks.map((item, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300"
+                className="group p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-all">
+                    <div className="w-16 h-16 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-all">
                       {item.icon}
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-bold text-cyan-400 mb-2">
+                    <div className="text-sm font-bold text-primary mb-2">
                       STEP {item.step}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">
@@ -173,7 +173,7 @@ export default function AboutPage() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300"
+                className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
               >
                 <div className="mb-4">
                   {value.icon}
@@ -193,7 +193,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto mb-24">
           <div className="p-12 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-6 justify-center">
-              <Brain className="h-8 w-8 text-cyan-400" />
+              <Brain className="h-8 w-8 text-primary" />
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Powered by Advanced AI
               </h2>
@@ -203,31 +203,31 @@ export default function AboutPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-300">
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Market Analysis Agent:</strong> Evaluates market size, trends, and opportunities</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Financial Modeling Agent:</strong> Creates revenue projections and cost structures</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Competitive Analysis Agent:</strong> Maps competitive landscape and positioning</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Product Strategy Agent:</strong> Defines features, roadmap, and development plan</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Go-to-Market Agent:</strong> Designs customer acquisition and growth strategies</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Risk Assessment Agent:</strong> Identifies challenges and mitigation strategies</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-primary mt-1">•</span>
                 <span><strong>Team Planning Agent:</strong> Determines hiring needs and organizational structure</span>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <div className="text-center max-w-2xl mx-auto">
-          <div className="p-12 rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm">
+          <div className="p-12 rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 to-orange-500/10 backdrop-blur-sm">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Start Building?
             </h2>
@@ -245,7 +245,7 @@ export default function AboutPage() {
             </p>
             <a
               href="/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] hover:scale-105"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary/80 text-white font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(252,110,32,0.5)] hover:scale-105"
             >
               <Rocket className="h-5 w-5" />
               Forge Your Blueprint
